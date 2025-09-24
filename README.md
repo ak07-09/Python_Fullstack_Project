@@ -51,7 +51,7 @@ The Prompt Builder API is a Python-based project that generates and improves tex
 
 ## 📂 **Project Structure**
 
->>>>>>> f980438c3812f01adaf2955bf6de62710e736bd9
+
 ```
 
 PROMPT BUILDER/
