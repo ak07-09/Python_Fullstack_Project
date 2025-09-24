@@ -54,7 +54,7 @@ Focused on clarity rather than complexity.
 
 
 ## Project Structure
-
+```
 PROMPT BUILDER/
 |
 |---src/            #core application logic
@@ -74,7 +74,7 @@ operations
 |
 |____.env           #Python Variables
 
-
+```
 
 ## Quick Start
 
