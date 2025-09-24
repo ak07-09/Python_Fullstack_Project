@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # 🚀 **PROMPT BUILDER** 🛠️
 
@@ -26,7 +25,6 @@ The Prompt Builder API is a Python-based project that generates and improves tex
 
 ## 📂 **Project Structure**
 
-=======
 # 🚀 **PROMPT BUILDER** 🛠️
 
 ## 📝 **Project Description**
