@@ -178,22 +178,22 @@ This app will be available at
 
 ## Future enhancements
 
-**AI-powered Prompt Optimization**
+- **AI-powered Prompt Optimization**
     Integrate NLP/AI models (e.g., GPT) to intelligently improve prompts instead of only using rule-based logic.
-**User Authentication**
+- **User Authentication**
     Add login/signup via Supabase Auth so users can save and manage their own prompt history.
-**Frontend Interface**
+- **Frontend Interface**
     Build a simple web UI (React/Next.js) for users to input prompts and view results instead of only using Swagger UI.
-**Prompt Categories & Customization**
+- **Prompt Categories & Customization**
     Allow users to select themes (e.g., gaming, coding, fantasy, photography).
     Provide options for style, tone, and detail level.
-**Export Options**
+- **Export Options**
     Enable downloading prompts as text/JSON/CSV for reuse in creative tools.
 
-**Search & Filter**
+- **Search & Filter**
     Add search functionality to find previously stored prompts.
     Filter by category, keywords, or date.
-**Rate & Improve System**
+- **Rate & Improve System**
     Let users upvote/downvote prompts.
     Use ratings to improve the enhancement rules.
 
