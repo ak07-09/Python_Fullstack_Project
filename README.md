@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 🚀 **PROMPT BUILDER** 🛠️
 
@@ -25,6 +26,34 @@ The Prompt Builder API is a Python-based project that generates and improves tex
 
 ## 📂 **Project Structure**
 
+=======
+# 🚀 **PROMPT BUILDER** 🛠️
+
+## 📝 **Project Description**
+
+The Prompt Builder API is a Python-based project that generates and improves text prompts using simple rule-based logic. It allows users to input minimal text (like "gaming wallpaper"), and the system expands it into a detailed, well-structured prompt. The goal of this project is to demonstrate how Python modules, data structures, and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
+
+---
+
+## ✨ **Features**
+
+- **Prompt Enhancement** 🪄: Takes a short input (e.g., “gaming wallpaper”) and expands it into a detailed, structured prompt using predefined rules and attributes.
+- **Prompt Generation with Minimal Input** ✍️: Even if the user provides only one or two words, the system can build a creative, well-formed prompt.
+- **Database Integration (Supabase)** 💾: Stores both original and improved prompts, and supports easy retrieval and management of them.
+- **RESTful API Endpoints** 🌐:
+    - `POST /build` → Accepts user input and returns an enhanced prompt.
+    - `GET /prompts` → Fetches all stored prompts.
+    - `GET /random` → Retrieves a random saved prompt (optional fun feature).
+- **Category-based Expansion (Optional)** 🏷️: Adds thematic details based on category (e.g., gaming, coding, nature).
+- **Validation & Error Handling** ✅: Ensures valid input (not empty) and provides clear error messages for invalid requests.
+- **Interactive Documentation** 📖: Built-in Swagger UI via FastAPI, allowing users to test the API directly in the browser.
+- **Lightweight & Beginner-Friendly** 🌱: Has a minimal setup that is easy to deploy, and is focused on clarity rather than complexity.
+
+---
+
+## 📂 **Project Structure**
+
+>>>>>>> f980438c3812f01adaf2955bf6de62710e736bd9
 ```
 
 PROMPT BUILDER/
