@@ -1,6 +1,3 @@
-Here is your enhanced README.md file with more emojis, ready to be pasted.
-
-```markdown
 # 🚀 **PROMPT BUILDER** 🛠️
 
 ## 📝 **Project Description**
@@ -45,7 +42,7 @@ PROMPT BUILDER/
 |---README.md            \# Project Documentation
 |---.env                 \# Environment variables
 
-````
+```
 
 ---
 
