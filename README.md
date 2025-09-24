@@ -1,205 +1,166 @@
-# PROMPT BUILDER
-The Prompt Builder API is a Python-based project that generates and improves text prompts using simple rule-based logic. It allows users to input minimal text (like "gaming wallpaper"), and the system expands it into a detailed, well-structured prompt 
-The goal of the project is to demonstrate how Python modules, data structures, and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
 
+# 🚀 **PROMPT BUILDER** 🛠️
 
-# FEATURES 
-- **Prompt Enhancement**
+## 📝 **Project Description**
 
-Takes a short input (e.g., “gaming wallpaper”).
+The Prompt Builder API is a Python-based project that generates and improves text prompts using simple rule-based logic. It allows users to input minimal text (like "gaming wallpaper"), and the system expands it into a detailed, well-structured prompt. The goal of this project is to demonstrate how Python modules, data structures, and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
 
-Expands it into a detailed, structured prompt using predefined rules and attributes.
+---
 
-- **Prompt Generation with Minimal Input ** :
+## ✨ **Features**
 
-Even if the user provides only one or two words, the system can build a creative, well-formed prompt.
+- **Prompt Enhancement** 🪄: Takes a short input (e.g., “gaming wallpaper”) and expands it into a detailed, structured prompt using predefined rules and attributes.
+- **Prompt Generation with Minimal Input** ✍️: Even if the user provides only one or two words, the system can build a creative, well-formed prompt.
+- **Database Integration (Supabase)** 💾: Stores both original and improved prompts, and supports easy retrieval and management of them.
+- **RESTful API Endpoints** 🌐:
+    - `POST /build` → Accepts user input and returns an enhanced prompt.
+    - `GET /prompts` → Fetches all stored prompts.
+    - `GET /random` → Retrieves a random saved prompt (optional fun feature).
+- **Category-based Expansion (Optional)** 🏷️: Adds thematic details based on category (e.g., gaming, coding, nature).
+- **Validation & Error Handling** ✅: Ensures valid input (not empty) and provides clear error messages for invalid requests.
+- **Interactive Documentation** 📖: Built-in Swagger UI via FastAPI, allowing users to test the API directly in the browser.
+- **Lightweight & Beginner-Friendly** 🌱: Has a minimal setup that is easy to deploy, and is focused on clarity rather than complexity.
 
-- **Database Integration (Supabase)** :
+---
 
-Stores both original and improved prompts.
+## 📂 **Project Structure**
 
-Supports easy retrieval and management of prompts.
-
-- **RESTful API Endpoints**:
-
-POST /build → Accepts user input and returns enhanced prompt.
-
-GET /prompts → Fetches all stored prompts.
-
-GET /random → Retrieves a random saved prompt (optional fun feature).
-
-- **Category-based Expansion (Optional)**:
-
-Adds thematic details based on category (e.g., gaming, coding, nature).
-
-- **Validation & Error  Handling** :
-
-Ensures valid input (not empty).
-
-Provides clear error messages for invalid requests.
-
-- **Interactive Documentation**:
-
-Built-in Swagger UI via FastAPI.
-
-Users can test API directly in browser without external tools.
-
-- **Lightweight & Beginner-Friendly**:
-
-Minimal setup, easy to deploy.
-
-Focused on clarity rather than complexity.
-
-
-
-
-## Project Structure
 ```
+
 PROMPT BUILDER/
 |
-|---src/            #core application logic
-|    |---logic.py   #tasks
-operations
-|    |__db.py       #database operations
+|---src/                 \# Core application logic
+|    |---logic.py        \# Business logic for prompt operations
+|    |---db.py           \# Database operations
 |
-|----api.py/        #Backend api
-|    |__main.py     #FASTAPI endpoints
+|---api/                 \# Backend API
+|    |---main.py         \# FastAPI endpoints
 |
-|----frontend/      #frontend application
-|    |__app.py      #Streamlit web interface
+|---frontend/            \# Frontend application
+|    |---app.py          \# Streamlit web interface
 |
-|____reqiurements.txt   #python dependencies
-|
-|____README.md      #Project Documentation
-|
-|____.env           #Python Variables
+|---requirements.txt     \# Python dependencies
+|---README.md            \# Project Documentation
+|---.env                 \# Environment variables
 
 ```
 
-## Quick Start
+---
 
-### Prerequistites
+## 🚀 **Quick Start**
 
-- Python 3.8 or higher
-- A Supabase account
-- Git(Push,cloning)
+### **Prerequisites**
+- Python 3.8 or higher 🐍
+- A Supabase account 🟢
+- Git for cloning 🌳
 
-
-### 1. Clone or Download the Project
-
-# option 1: Clone with git
+### **1. Clone the Project**
+```bash
+# Option 1: Clone with git
 git clone <repo-url>
+````
 
-# option 2: Download and extract zip files
+You can also download and extract the zip file.
 
-### 2. Install Dependencies
+### **2. Install Dependencies**
 
-# Install all required packages
-
+```bash
 pip install -r requirements.txt
+```
 
-### 3. Setup Supabase  Database
+### **3. Setup Supabase Database**
 
-1.Create Supabase Database
+1.  Create a new project in your Supabase account.
+2.  Go to the **SQL Editor** and run the following command to create your table:
 
-2.Create Task Table:
+<!-- end list -->
 
--Go to your Supabase project → SQL Editor → Run this:
-
-'''sql
+```sql
 create table if not exists prompts (
     id bigserial primary key,
     user_input text not null,
     improved text not null,
     created_at timestamp default current_timestamp
 );
+```
 
-'''
+3.  Get your **Project URL** and **API Key** from the Supabase settings. 🔑
 
-3.  **Get Your Credentials** :
+### **4. Configure Environment Variables**
 
+Create a `.env` file in the root directory and add your Supabase credentials:
 
-## 4. Configure Environment Variables
-
-
-1. Create a .env file in the root directory and add your Supabase credentials.
-
-2. Add your Supabase Credentials to '.env' : 
+```ini
 SUPABASE_URL=YOUR_SUPABASE_URL
 SUPABASE_KEY=YOUR_SUPABASE_API_KEY
+```
 
+### **5. Run the Application**
 
-### 5. Run the application
+#### **Streamlit Frontend**
 
-## Streamlit Frontend
+```bash
+streamlit run frontend/app.py
+```
 
-Streamlit run Frontend/app.py
+This app will open in your browser. 🖥️
 
-This app will open in the Browser at 
+#### **FastAPI Backend**
 
-## FASTAPI Backend
-
+```bash
 cd api
+uvicorn main:app --reload
+```
 
-python main.py
+The API will be available at `http://127.0.0.1:8000`. 🚀
 
-This app will be available at 
+-----
 
+## 💡 **How to Use**
 
-## How to use
+*This section will be updated with usage instructions.* 📝
 
+-----
 
-## Technologies used
+## 💻 **Technologies Used**
 
-**Frontend**: Swagger UI (auto-generated by FastAPI for API testing)
+  - **Frontend**: Swagger UI (auto-generated by FastAPI for API testing) 🧪
+  - **Backend**: FastAPI (Python framework for building APIs) ⚡
+  - **Database**: Supabase (PostgreSQL) 🐘
+  - **Language**: Python 🐍
 
-**Backend**: FastAPI (Python framework for building APIs)
+### **Key Components**
 
-**Database**: Supabase (PostgreSQL)
+1.  **`src/db.py`**: Handles all CRUD operations with Supabase. 🔄
+2.  **`src/logic.py`**: Contains the core business logic and prompt processing. 🧠
 
-**Language**: Python
+-----
 
-### Key Components
+## ⚠️ **Troubleshooting**
 
-1. **`src/db.py`**: Database operations
-    - Handles all CRUD operations with Supabase
+*Common issues and solutions will be listed here.* 🐛
 
-2. **`src/logic.py`**: Businness Logic 
-    - Task Validation and processing
+-----
 
+## 📈 **Future Enhancements**
 
-## Trouble Shooting 
+  - **AI-powered Prompt Optimization**: Integrate NLP/AI models (e.g., GPT) to intelligently improve prompts beyond rule-based logic. 🤖
+  - **User Authentication**: Add login/signup via Supabase Auth so users can save and manage their own prompt history. 🔒
+  - **Frontend Interface**: Build a more custom web UI (e.g., React/Next.js) for a better user experience. ✨
+  - **Prompt Categories & Customization**: Allow users to select themes and customize the style, tone, and detail level of generated prompts. 🎨
+  - **Export Options**: Enable downloading prompts as text, JSON, or CSV for reuse in creative tools. 📥
+  - **Search & Filter**: Add search functionality to find previously stored prompts by keyword, category, or date. 🔍
+  - **Rate & Improve System**: Implement a system for users to upvote/downvote prompts to help improve the enhancement rules. 👍
 
-## common issues
+-----
 
-1. **   ** :
+## 🤝 **Support**
 
+If you encounter any issues or have questions, please feel free to reach out:
 
+  - Email: `aravind.madishetty07@gmail.com` 📧
 
-## Future enhancements
+<!-- end list -->
 
-- **AI-powered Prompt Optimization**
-    Integrate NLP/AI models (e.g., GPT) to intelligently improve prompts instead of only using rule-based logic.
-- **User Authentication**
-    Add login/signup via Supabase Auth so users can save and manage their own prompt history.
-- **Frontend Interface**
-    Build a simple web UI (React/Next.js) for users to input prompts and view results instead of only using Swagger UI.
-- **Prompt Categories & Customization**
-    Allow users to select themes (e.g., gaming, coding, fantasy, photography).
-    Provide options for style, tone, and detail level.
-- **Export Options**
-    Enable downloading prompts as text/JSON/CSV for reuse in creative tools.
-
-- **Search & Filter**
-    Add search functionality to find previously stored prompts.
-    Filter by category, keywords, or date.
-- **Rate & Improve System**
-    Let users upvote/downvote prompts.
-    Use ratings to improve the enhancement rules.
-
-
-## Support 
-
-IF YOU ENCOUNTER ANY ISSUES OR HAVE QUESTIONS :
-
-email: aravind.madishetty07@gmail.com   
+```
+```
