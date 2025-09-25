@@ -3,7 +3,7 @@
 
 ## 📝 **Project Description**
 
-The Prompt Builder API is a Python-based project that generates and improves text prompts using simple rule-based logic. It allows users to input minimal text (like "gaming wallpaper"), and the system expands it into a detailed, well-structured prompt. The goal of this project is to demonstrate how Python modules, data structures, and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
+The Prompt Builder API is a Python-based project that generates and improves text prompts using simple rule-based logic. It allows users to input minimal text (like "gaming wallpaper"), and the system expands it into a detailed, well-structured prompt. The goal of this project is to demonstrate how Python modules and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
 
 ---
 
@@ -165,7 +165,37 @@ The API will be available at `http://127.0.0.1:8000`. 🚀
 
 ## ⚠️ **Troubleshooting**
 
-*Common issues and solutions will be listed here.* 🐛
+**Common issues and solutions  listed here.** 🐛
+
+### **1. Backend (FastAPI) Issues**
+
+- **Issue: `404 Not Found` Error** 🌐
+    - **Reason:** The API server might not be running or the URL in your frontend is incorrect.
+    - **Solution:** - First, verify that your FastAPI server is active by running `uvicorn main:app --reload` in your terminal.
+        - Then, check that the `API_BASE_URL` in your `app.py` file is correctly set to `http://localhost:8000`.
+
+- **Issue: `ImportError: cannot import name 'PromptDatabaseManager' from 'src.db'`** 🐍
+    - **Reason:** This error occurs when your `logic.py` file is trying to import a class that isn't defined in your `db.py` file.
+    - **Solution:** Confirm that your `db.py` file has the `PromptDatabaseManager` class and that all your functions are properly placed as methods within that class. Also, check for any spelling errors.
+
+- **Issue: `500 Internal Server Error`** 💥
+    - **Reason:** This is a general error that indicates an unexpected problem within your backend code, such as a database connection failure, a wrong variable name, or a typo.
+    - **Solution:** Inspect the terminal where your FastAPI server is running. The specific error message will be printed there, which will help you identify the line of code that caused the problem.
+
+---
+
+### **2. Frontend (Streamlit) Issues**
+
+- **Issue: `Error: Streamlit requires raw Python (.py) files...`** 💻
+    - **Reason:** You are not including the `.py` extension when you run the Streamlit command.
+    - **Solution:** Use the correct command `streamlit run frontend/app.py` to specify the file's extension.
+
+- **Issue: `ConnectionError`** 🔌
+    - **Reason:** The Streamlit frontend cannot connect to your FastAPI backend server.
+    - **Solution:** Ensure your backend server is running in a separate terminal window. Also, verify that the `API_BASE_URL` in your `app.py` is configured as `http://localhost:8000`.
+
+---
+
 
 -----
 

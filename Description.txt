@@ -4,7 +4,7 @@ DESCRIPTION:The Prompt Builder API is a Python-based project that generates and 
 
 This project is built using FastAPI for creating RESTful endpoints and Supabase as the backend database to store both the original and improved prompts.
 
-The goal of the project is to demonstrate how Python modules, data structures, and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
+The goal of the project is to demonstrate how Python modules and API frameworks can be combined to create a useful, beginner-friendly tool for prompt generation and management.
 
 
 
